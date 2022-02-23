@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.iocl.cyro.model.Customer;
+import com.iocl.cyro.response.Response;
 import com.iocl.cyro.service.Customerservice;
 
 @RestController
@@ -25,6 +26,9 @@ public class CustomerController {
 
 	@PostMapping("/customer")
 	public ResponseEntity<?> saveCustomer(@RequestBody Customer customer) {
-		return new ResponseEntity<>(HttpStatus.ACCEPTED).ok(customerservice.saveCustomer(customer));
+//		return new ResponseEntity<>(HttpStatus.ACCEPTED).ok(customerservice.saveCustomer(customer));
+		return new ResponseEntity<Response>(
+				new Response(true, "saved Customer Sucessfully", customerservice.saveCustomer(customer)),
+				HttpStatus.CREATED);
 	}
 }

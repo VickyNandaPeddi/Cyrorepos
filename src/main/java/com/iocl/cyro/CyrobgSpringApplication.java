@@ -1,0 +1,13 @@
+package com.iocl.cyro;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CyrobgSpringApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CyrobgSpringApplication.class, args);
+	}
+
+}

@@ -1,19 +1,17 @@
 package com.iocl.cyro.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.iocl.cyro.model.Customer;
 import com.iocl.cyro.response.Response;
 import com.iocl.cyro.service.Customerservice;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/customer")
 public class CustomerController {
 	@Autowired
@@ -25,7 +23,7 @@ public class CustomerController {
 	}
 
 	@PostMapping("/customer")
-	public ResponseEntity<?> saveCustomer(@RequestBody Customer customer) {
+	public ResponseEntity<?> saveCustomer(@Valid @RequestBody Customer customer) {
 //		return new ResponseEntity<>(HttpStatus.ACCEPTED).ok(customerservice.saveCustomer(customer));
 		return new ResponseEntity<Response>(
 				new Response(true, "saved Customer Sucessfully", customerservice.saveCustomer(customer)),

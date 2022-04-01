@@ -1,0 +1,13 @@
+com\iocl\cyro\mail\AttachmentMailRequest.class
+com\iocl\cyro\mail\MailApiCall.class
+com\iocl\cyro\mail\WSOutput.class
+com\iocl\cyro\model\TrnCustQueries.class
+com\iocl\cyro\controller\CustomerController.class
+com\iocl\cyro\response\Response.class
+com\iocl\cyro\CyrobgSpringApplication.class
+com\iocl\cyro\mail\SendMail.class
+com\iocl\cyro\dao\Customerdao.class
+com\iocl\cyro\mail\AttachmentRequest.class
+com\iocl\cyro\service\Customerservice.class
+com\iocl\cyro\mail\Mail.class
+com\iocl\cyro\mail\MailToCC.class

@@ -1,0 +1,28 @@
+[
+  {
+    "customerid": 1,
+    "customername": "firstCusotmer",
+    "designation": "ece",
+    "address": "address",
+    "town": "town",
+    "district": "district",
+    "state": "state",
+    "pin": "pin",
+    "phone": 12212,
+    "emailid": "nandakishorepeddi9@gmail.com",
+    "panno": "pan",
+    "applicationuse": [
+      "applicationuse1",
+      "applicaion use2"
+    ],
+    "modelselection": [
+      "modesel1",
+      "modesel2"
+    ],
+    "inforequired": [
+      "inforq1",
+      "inforeq2"
+    ],
+    "freetext": "freetext"
+  }
+]

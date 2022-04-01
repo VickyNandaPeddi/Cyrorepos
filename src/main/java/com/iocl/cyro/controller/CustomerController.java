@@ -1,7 +1,7 @@
 package com.iocl.cyro.controller;
-
-import com.iocl.cyro.model.Customer;
-import com.iocl.cyro.response.Response;
+import com.iocl.cyro.response.*;
+import com.iocl.cyro.model.TrnCustQueries;
+//import com.iocl.cyro.response.Response;
 import com.iocl.cyro.service.Customerservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,10 +23,13 @@ public class CustomerController {
 	}
 
 	@PostMapping("/customer")
-	public ResponseEntity<?> saveCustomer(@Valid @RequestBody Customer customer) {
+//	public ResponseEntity<?> saveCustomer(@Valid @RequestBody customer customer) {
+		public ResponseEntity<?> saveCustomer(@Valid @RequestBody TrnCustQueries customer) {
+//		customerservice.saveCustomer(customer);
+//		return "test";
 //		return new ResponseEntity<>(HttpStatus.ACCEPTED).ok(customerservice.saveCustomer(customer));
 		return new ResponseEntity<Response>(
-				new Response(true, "saved Customer Sucessfully", customerservice.saveCustomer(customer)),
+				new Response(true, "Query Details saved successfully", customerservice.saveCustomer(customer)),
 				HttpStatus.CREATED);
 	}
 }

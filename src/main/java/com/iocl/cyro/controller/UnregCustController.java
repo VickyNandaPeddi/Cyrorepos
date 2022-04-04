@@ -16,6 +16,8 @@ import com.iocl.cyro.model.TrnOrderDetails;
 import com.iocl.cyro.service.MstModelService;
 import com.iocl.cyro.service.TrnOrderDetailsService;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -24,22 +26,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 @CrossOrigin(origins = { "http://localhost:4200", "https://uat.indianoil.co.in", "https://spandan.indianoil.co.in" })
 @RequestMapping("/UnregCust")
+@Slf4j
 public class UnregCustController {
 
 	@Autowired
 	private TrnOrderDetailsService trnOrderDetailsService;
-	
+
 	@PostMapping("/createOrder")
-	public ResponseEntity<ApiResponse> 
-	createOrder(@RequestBody TrnOrderDetails trnOrderDet,HttpServletResponse response) {
-		trnOrderDetailsService.createOrder(trnOrderDet);
-		System.out.print("inside controller 123 "+trnOrderDet.getCustName());
-		return ResponseEntity.status(HttpStatus.ACCEPTED).body(
-				new ApiResponse(true, "Details saved successfully"));
+	public ResponseEntity<ApiResponse> createOrder(@RequestBody TrnOrderDetails trnOrderDet) {
+		TrnOrderDetails createOrder = trnOrderDetailsService.createOrder(trnOrderDet);
+		System.out.print("inside controller 123 " + trnOrderDet.getCustName());
+		log.error("created order" + createOrder.toString());
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new ApiResponse(true, "Details saved successfully"));
 //		return trnOrderDet.getCity();
-		
+
 	}
-	
+
 	@GetMapping("/order-list")
 	public ArrayList<TrnOrderDetails> fetchOrderDetails() {
 		System.out.println("ORDER LIST");

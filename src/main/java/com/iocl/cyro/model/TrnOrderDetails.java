@@ -1,5 +1,7 @@
 package com.iocl.cyro.model;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -64,6 +66,16 @@ public class TrnOrderDetails {
 	private String tcsdeclarationform;
 	@Column(name = "deliverytype")
 	private String deliverytype;
+	@Column(name = "createdOn")
+	private Timestamp createdOn;
+
+	public Timestamp getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(Timestamp createdOn) {
+		this.createdOn = createdOn;
+	}
 
 	public String getCity() {
 		return city;
@@ -278,3 +290,5 @@ public class TrnOrderDetails {
 	}
 
 }
+
+//refno,custname,city state,created on

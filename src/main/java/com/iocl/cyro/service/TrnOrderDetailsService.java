@@ -1,6 +1,8 @@
 package com.iocl.cyro.service;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.transaction.Transactional;
 
@@ -17,7 +19,7 @@ public class TrnOrderDetailsService {
 
 	public TrnOrderDetails createOrder(TrnOrderDetails trnOrder) {
 		System.out.println("CHECK");
-
+		trnOrder.setCreatedOn(new Timestamp(System.currentTimeMillis()));
 		return trnOrderDetailsDao.save(trnOrder);
 	}
 

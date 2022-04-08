@@ -2,6 +2,7 @@ package com.iocl.cyro.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,5 +47,11 @@ public class UnregCustController {
 	public ArrayList<TrnOrderDetails> fetchOrderDetails() {
 		System.out.println("ORDER LIST");
 		return trnOrderDetailsService.fetchAllOrders();
+	}
+
+	@GetMapping("/order-list/{reqno}")
+	public TrnOrderDetails fetchOrderDetails(@PathVariable("reqno") int reqno) {
+		System.out.println("ORDER LIST");
+		return trnOrderDetailsService.fetchOneOrders(reqno);
 	}
 }

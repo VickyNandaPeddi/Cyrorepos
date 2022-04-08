@@ -26,4 +26,7 @@ public class TrnOrderDetailsService {
 	public ArrayList<TrnOrderDetails> fetchAllOrders() {
 		return trnOrderDetailsDao.findAllOrder();
 	}
+	public TrnOrderDetails fetchOneOrders(int id) {
+		return trnOrderDetailsDao.findById(id).get();
+	}
 }

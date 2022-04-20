@@ -11,10 +11,10 @@ public class MstProduct {
 	@Id
 	@Column(name = "SL_NO")
 	private int sl_no;
-	
+
 	@Column(name = "PROD_CODE")
 	private String prod_code;
-	
+
 	@Column(name = "PROD_DESC")
 	private String prod_desc;
 
@@ -51,7 +51,15 @@ public class MstProduct {
 	public MstProduct() {
 		super();
 	}
-	
-	
-	
+
+	public MstProduct(String string, String string2, int i) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public MstProduct(int sl_no, String prod_code, String prod_desc) {
+		super();
+		this.sl_no = sl_no;
+		this.prod_code = prod_code;
+		this.prod_desc = prod_desc;
+	}
 }

@@ -66,8 +66,40 @@ public class TrnOrderDetails {
 	private String tcsdeclarationform;
 	@Column(name = "deliverytype")
 	private String deliverytype;
+	@Column(name = "baseprice")
+	private double baseprice;
+	@Column(name = "expectedeliverydate")
+	private String expectedeliverydate;
 	@Column(name = "createdOn")
 	private Timestamp createdOn;
+	@Column(name = "calldate")
+	private Timestamp calldate;
+
+	
+
+	public Timestamp getCalldate() {
+		return calldate;
+	}
+
+	public void setCalldate(Timestamp calldate) {
+		this.calldate = calldate;
+	}
+
+	public double getBaseprice() {
+		return baseprice;
+	}
+
+	public void setBaseprice(double baseprice) {
+		this.baseprice = baseprice;
+	}
+
+	public String getExpectedeliverydate() {
+		return expectedeliverydate;
+	}
+
+	public void setExpectedeliverydate(String expectedeliverydate) {
+		this.expectedeliverydate = expectedeliverydate;
+	}
 
 	public Timestamp getCreatedOn() {
 		return createdOn;
@@ -286,7 +318,9 @@ public class TrnOrderDetails {
 				+ ", pancertificate=" + pancertificate + ", tanno=" + tanno + ", accountnumber=" + accountnumber
 				+ ", payeename=" + payeename + ", ifsccode=" + ifsccode + ", branchcode=" + branchcode
 				+ ", cancelledcheque=" + cancelledcheque + ", tcsapplicable=" + tcsapplicable + ", tcsdeclarationform="
-				+ tcsdeclarationform + ", deliverytype=" + deliverytype + "]";
+				+ tcsdeclarationform + ", deliverytype=" + deliverytype + ", baseprice=" + baseprice
+				+ ", expectedeliverydate=" + expectedeliverydate + ", createdOn=" + createdOn + ", calldate=" + calldate
+				+ "]";
 	}
 
 }

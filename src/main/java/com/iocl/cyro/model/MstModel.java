@@ -51,6 +51,11 @@ public class MstModel {
 	public MstModel() {
 		super();
 	}
-	
+	public MstModel(int sl_no,String model_code, String model_desc) {
+		super();
+		this.sl_no=sl_no;
+		this.model_code = model_code;
+		this.model_desc = model_desc;
+	}
 	
 }

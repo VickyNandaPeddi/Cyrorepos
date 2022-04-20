@@ -22,45 +22,44 @@ public class genericController {
 	private MstStateDistrictService mstStateDistService;
 	@Autowired
 	private MstProductService mstProdService;
-	
+
 	@Autowired
 	private MstModelService mstModelService;
-	
+
 	@Autowired
 	private MstGeneralDropdownsService mstGeneralDrops;
-	
-	
+
 	@GetMapping("/Hi")
 	public String showmessage() {
 		System.out.print("inside controller");
-	return "test";
+		return "test";
 	}
-	
+
 	@GetMapping("/state-list")
 	public ArrayList<MstStateDistrict> getStateList() {
-		
+
 		return mstStateDistService.fetchAllStates();
 	}
-	
+
 	@GetMapping("/product-list")
 	public ArrayList<MstProduct> getProductList() {
-		
+
 		return mstProdService.fetchAllProducts();
 	}
-	
+
 	@GetMapping("/model-list")
 	public ArrayList<MstModel> getModelList() {
-		
+
 		return mstModelService.fetchAllModels();
-		 
+
 		// @formatter:on
 	}
-	
+
 	@GetMapping("/drops-list/{type_slno}")
 	public ArrayList<MstGeneralDropdowns> getGeneralDrops(@PathVariable String type_slno) {
-		
+
 		return mstGeneralDrops.fetchGeneralDrops(type_slno);
-		 
+
 		// @formatter:on
 	}
 }
